@@ -6,18 +6,18 @@ using System.Threading.Tasks;
 
 namespace ClassLibrary
 {
-    public class MyMath
+    public class MyMath // создали класс для подключения к проекту
     {
-        public static bool IsLeap(int year)
+        public static bool IsLeap(int year) // перегруженная функция для проверки високосного года ( int ) 
         {        
 
             return (year % 4 == 0) && ((year % 100 != 0 )||(year % 400 == 0));
         }
-        public static bool IsLeap(DateTime year) 
+        public static bool IsLeap(DateTime year) // перегруженная функция для проверки високосного года ( DateTime ) 
         {   
             return IsLeap(year.Year);
         }
-        public static bool IsLeap(string year)
+        public static bool IsLeap(string year) // перегруженная функция для проверки високосного года ( year ) 
         {
             
             if ((year.Contains('.'))||(year.Contains('/')))
@@ -25,9 +25,9 @@ namespace ClassLibrary
             else
                 return IsLeap(Convert.ToInt32(year));
         }
-        public static decimal Summ(decimal a, decimal b, decimal c)
-            { return a + b + c; }
-        public static decimal Summ(string x)
+        public static decimal Summ(decimal a, decimal b, decimal c) // перегруженная функция для  расчета максимального значения( decimal ) 
+        { return a + b + c; }
+        public static decimal Summ(string x) // перегруженная функция для  расчета максимального значения( string ) 
         {
             decimal result = 0;
             string[] numbers = x.Split(';');
@@ -35,7 +35,7 @@ namespace ClassLibrary
                 { result += Convert.ToDecimal(number); }
             return result; 
         }
-
+        // принцип тот же, только для расчета Max, Min
         public static decimal Max(decimal a, decimal b, decimal c) 
         {
             return new[] { a, b, c }.Max();

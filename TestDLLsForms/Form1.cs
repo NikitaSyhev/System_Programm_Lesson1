@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using ClassLibrary;
+using ClassLibrary; // подключили стронний класс, который создали сами
 
 
 namespace TestDLLsForms
